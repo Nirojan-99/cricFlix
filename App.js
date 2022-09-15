@@ -9,11 +9,11 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
 // screens
-import HomeScreen from './Components/HomeScreen';
-import FixturesScreen from './Components/FixturesScreen';
-import NFTStoreScreen from './Components/NFTStoreScreen';
-import SearchScreen from './Components/SearchScreen';
-import MenuScreen from './Components/MenuScreen';
+import HomeScreen from './Screens/HomeScreen';
+import FixturesScreen from './Screens/FixturesScreen';
+import NFTStoreScreen from './Screens/NFTStoreScreen';
+import SearchScreen from './Screens/SearchScreen';
+import MenuScreen from './Screens/MenuScreen';
 
 //icons
 import {
