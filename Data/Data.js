@@ -19,6 +19,28 @@ const liveData = [
     image: 'https://images.news18.com/ibnlive/uploads/2020/01/6.jpg',
   },
 ];
+
+const highlightData = [
+  {
+    match: 'IPL start with usual time line from end of this month',
+    views: '100K views',
+    date: '02 Aug 2021',
+    image:
+      'https://c.ndtvimg.com/2020-04/np151oi_virat-kohli-sarfaraz-ahmed-afp_625x300_08_April_20.jpg',
+  },
+  {
+    match: 'IPL start with usual time line from end of this month',
+    views: '100K views',
+    date: '02 Nov 2021',
+    image: 'https://static.toiimg.com/photo/msid-93840838/93840838.jpg',
+  },
+  {
+    match: 'IPL start with usual time line from end of this month',
+    views: '1000K views',
+    date: '02 Nov 2021',
+    image: 'https://images.news18.com/ibnlive/uploads/2020/01/6.jpg',
+  },
+];
 const curatedData = [
   {
     match: 'IPL start with usual time line from end of this month',
@@ -57,4 +79,4 @@ const nftData = [
   },
 ];
 
-export {liveData, nftData, curatedData};
+export {liveData, nftData, curatedData,highlightData};

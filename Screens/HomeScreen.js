@@ -5,10 +5,12 @@ import {ScrollView} from 'react-native';
 import {Image} from 'react-native';
 import {StatusBar} from 'react-native';
 import {TouchableOpacity} from 'react-native';
-import {curatedData, liveData, nftData} from '../Data/Data';
+import {curatedData, highlightData, liveData, nftData} from '../Data/Data';
 import LiveMatch from '../Components/LiveMatch';
 import NFTasset from '../Components/NFTasset';
 import CuratedMatch from '../Components/CuratedMatch';
+import HighlightMatch from '../Components/HighlightMatch';
+import PodcastMatch from '../Components/PodcastMatch';
 
 export default function HomeScreen({navigation, route}) {
   return (
@@ -127,10 +129,99 @@ export default function HomeScreen({navigation, route}) {
                   return <CuratedMatch data={item} key={index} />;
                 })}
               </ScrollView>
-              <View>
-                <TouchableOpacity>
-                  <Text>View All</Text>
+              {/* view all btn */}
+              <View className="flex-row  justify-center mb-5">
+                <TouchableOpacity
+                  activeOpacity={0.6}
+                  className="px-10 py-3 border border-[#00278D] rounded-full">
+                  <Text className="text-[#00278D] font-bold  ">View All</Text>
                 </TouchableOpacity>
+              </View>
+            </View>
+            {/* highlight sec */}
+            <View>
+              {/* title sec */}
+              <View className="mx-3 my-8">
+                <Text className="font-extrabold text-3xl text-[#0C2159]">
+                  HIGHLIGHTS <Text className="font-normal">Videos</Text>
+                </Text>
+                <Text className="font-normal text-[16px] text-[#0C2159]">
+                  The hilights of the Matches
+                </Text>
+              </View>
+              {/*  */}
+              <ScrollView
+                showsHorizontalScrollIndicator={false}
+                horizontal
+                contentContainerStyle={{
+                  marginLeft: 16,
+                  marginBottom: 32,
+                  paddingRight: 16,
+                }}>
+                {highlightData.map((item, index) => {
+                  return <HighlightMatch key={index} data={item} />;
+                })}
+              </ScrollView>
+              {/* view all btn */}
+              <View className="flex-row  justify-center mb-5">
+                <TouchableOpacity
+                  activeOpacity={0.6}
+                  className="px-10 py-3 border border-[#00278D] rounded-full">
+                  <Text className="text-[#00278D] font-bold  ">View All</Text>
+                </TouchableOpacity>
+              </View>
+            </View>
+            {/* bottom sec */}
+            <View className="bg-[#00278D] relative">
+              <Image
+                className="w-full h-[950px] opacity-30"
+                style={{resizeMode: 'stretch'}}
+                source={require('../assets/home_first.png')}
+              />
+              <View className="absolute top-0 right-0 left-0">
+                <View className="mt-5 px-5 mr-5">
+                  <Text className="text-3xl text-white font-bold">It's </Text>
+                  <Text className="text-5xl text-white font-bold">
+                    All About
+                  </Text>
+                  <Text className="text-5xl text-white font-bold">
+                    CRICKET!
+                  </Text>
+                  <Text className="text-white text-sm font-normal my-3">
+                    Sharing experts thoughts about Cricket and what need to be
+                    done to achieve a best cricketting experience
+                  </Text>
+                  <View className="mt-8">
+                    <Text className="text-4xl text-white font-bold m-0 p-0">
+                      PODCASTS
+                    </Text>
+                    <Text className="text-white text-sm font-normal my-3">
+                      Listen to the most significant Podcasts
+                    </Text>
+                  </View>
+                </View>
+                {/* scroll */}
+                <ScrollView
+                  showsHorizontalScrollIndicator={false}
+                  horizontal
+                  contentContainerStyle={{
+                    marginLeft: 16,
+                    marginBottom: 32,
+                    paddingRight: 16,
+                    marginVertical: 20,
+                  }}>
+                  {highlightData.map((item, index) => {
+                    return <PodcastMatch key={index} data={item} />;
+                  })}
+                </ScrollView>
+                {/* view all btn */}
+                <View className="flex-row  justify-center mb-5">
+                  <TouchableOpacity
+                    activeOpacity={0.6}
+                    className="px-10 py-3 border border-[#fff] rounded-full">
+                    <Text className="text-[#fff] font-bold  ">View All</Text>
+                  </TouchableOpacity>
+                </View>
               </View>
             </View>
           </View>
