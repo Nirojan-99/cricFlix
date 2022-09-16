@@ -1,9 +1,7 @@
 import {
   View,
   Text,
-  TouchableWithoutFeedback,
   TextInput,
-  FlatList,
   ScrollView,
   SafeAreaView,
   KeyboardAvoidingView,
@@ -29,16 +27,31 @@ export default function Live() {
   const navigation = useNavigation();
   const route = useRoute();
 
+  React.useEffect(() => {
+    const unsubscribe = navigation.addListener('tabPress', e => {
+      // Prevent default behavior
+      e.preventDefault();
+      navigation.setParams({live: false});
+      navigation.navigate("Fixtures")
+    });
+
+    return unsubscribe;
+  }, [navigation]);
+
   useLayoutEffect(() => {
     if (route?.params.live === true) {
       navigation.setOptions({
         tabBarLabel: 'Live',
-        tabBarIcon: () => {
-          return <PlayCircleIcon color={'red'} size={22} />;
+        tabBarActiveTintColor: '#fff',
+        tabBarInactiveTintColor: 'gray',
+        tabBarActiveBackgroundColor: '#001038',
+        tabBarInactiveBackgroundColor: '#001038',
+        tabBarIcon: ({focused, color, size}) => {
+          return <PlayCircleIcon color={focused ? 'red' : 'gray'} size={22} />;
         },
       });
     }
-  }, [navigation, route]);
+  }, []);
 
   useEffect(() => {
     Keyboard.addListener('keyboardDidShow', () => {

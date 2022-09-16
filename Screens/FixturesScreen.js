@@ -1,7 +1,7 @@
-import {View, Text, SafeAreaView} from 'react-native';
 import React, {useEffect, useLayoutEffect, useState} from 'react';
 import Live from '../Components/Live';
-import {useIsFocused, useNavigation, useRoute} from '@react-navigation/native';
+import {useNavigation, useRoute} from '@react-navigation/native';
+import Fixture from '../Components/Fixture';
 
 export default function FixturesScreen() {
   const navigation = useNavigation();
@@ -9,11 +9,13 @@ export default function FixturesScreen() {
 
   const [live, setLive] = useState(false);
 
-
+  useEffect(() => {
+    setLive(route?.params?.live);
+  }, [navigation,route]);
 
   if (live === true) {
     return <Live />;
   } else {
-    return <View>{/* <Live /> */}</View>;
+    return <Fixture />;
   }
 }

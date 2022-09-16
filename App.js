@@ -33,6 +33,7 @@ const App = () => {
     <NavigationContainer>
       <Tab.Navigator
         screenOptions={({route, navigation}) => ({
+          tabBarHideOnKeyboard: true,
           tabBarLabel: route.name,
           tabBarIcon: ({focused, color, size}) => {
             switch (route.name) {

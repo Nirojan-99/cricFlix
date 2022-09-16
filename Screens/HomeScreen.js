@@ -47,7 +47,7 @@ export default function HomeScreen({navigation, route}) {
                   activeOpacity={0.9}>
                   <Image source={require('../assets/play_btn.png')} />
                 </TouchableOpacity>
-                <View className="-ml-10 rounded-full bg-slate-300 border-white p-3 border-2 z-0">
+                <View className="-ml-10 rounded-full bg-slate-300  p-3  z-0">
                   <Text className="pl-10 font-bold text-black">
                     STREAMING NOW
                   </Text>
