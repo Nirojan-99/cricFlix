@@ -96,7 +96,11 @@ const App = () => {
           component={HomeScreen}
           // options={{tabBarBadge: 3}}
         />
-        <Tab.Screen name="Fixtures" component={FixturesScreen} />
+        <Tab.Screen
+          name="Fixtures"
+          component={FixturesScreen}
+          initialParams={{live: false}}
+        />
         <Tab.Screen name="NFT" component={NFTStoreScreen} />
         <Tab.Screen name="Search" component={SearchScreen} />
         <Tab.Screen name="Menu" component={MenuScreen} />

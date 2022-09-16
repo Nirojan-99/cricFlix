@@ -79,4 +79,43 @@ const nftData = [
   },
 ];
 
-export {liveData, nftData, curatedData,highlightData};
+const comments = [
+  {
+    user: 'Nirojan',
+    comment:
+      'I appreciate both teams for there maximum efforts. Hope my team will comeback with foremost efforts today. All the best young Tigers !',
+    likes: 200,
+    dislike: 5,
+    edited: true,
+    date: '1 year ago',
+  },
+  {
+    user: 'Kamal',
+    comment:
+      'I appreciate both teams for there maximum efforts. Hope my team will comeback with foremost efforts today. All the best young',
+    likes: 34,
+    dislike: 3,
+    edited: false,
+    date: '4 month ago',
+  },
+  {
+    user: 'lava',
+    comment:
+      'I appreciate both teams for there maximum efforts. Hope my team will comeback with foremost efforts today. All the best young Tigers !',
+    likes: 20,
+    dislike: 34,
+    edited: true,
+    date: '2 years ago',
+  },
+  {
+    user: 'lava',
+    comment:
+      'I appreciate both teams for there maximum efforts. Hope my team will comeback with foremost efforts today. All the best young Tigers !',
+    likes: 20,
+    dislike: 34,
+    edited: true,
+    date: '2 years ago',
+  },
+];
+
+export {liveData, nftData, curatedData, highlightData, comments};
